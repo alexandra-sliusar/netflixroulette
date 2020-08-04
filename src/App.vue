@@ -1,7 +1,6 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <HelloWorld msg="Welcome to Netflix Roulette App"/>
   </div>
 </template>
 
@@ -22,7 +21,13 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: #FFFFFF;
+
+}
+
+html {
+  background-color: #555555;
+  width: 100%;
+  height: 100%;
 }
 </style>
