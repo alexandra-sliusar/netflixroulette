@@ -39,7 +39,7 @@ export default {
 <style>
 .nx-movie-item {
   width: 300px;
-  margin: 10px 0 0 2%;
+  margin: 40px 40px 0;
   display: flex;
   flex-flow: column wrap;
   color: #fff;
