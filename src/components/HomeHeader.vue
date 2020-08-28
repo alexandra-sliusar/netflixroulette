@@ -2,7 +2,7 @@
   <header class="nx-header">
     <div class="nx-header_blur">
       <navigation-bar :searchIconPresent="false" />
-      <search-bar />
+      <search-bar @searchMovies="searchMovies" />
     </div>
   </header>
 </template>
@@ -16,6 +16,11 @@ export default {
   components: {
     NavigationBar,
     SearchBar,
+  },
+  methods: {
+    searchMovies(searchRequest) {
+      this.$emit("searchMovies", searchRequest);
+    },
   },
 };
 </script>

@@ -1,6 +1,6 @@
 <template>
   <main class="nx-movie-results-body">
-    <genre-results-line :genres="genres" />
+    <genre-results-line :genres="movie.genre" />
     <div v-if="movies.length" class="nx-movie-movies-list">
       <movie-item v-for="movie in movies" :key="movie.title" :movie="movie" />
     </div>
@@ -17,26 +17,9 @@ import MovieItem from "./MovieItem.vue";
 export default {
   name: "MovieResultsBody",
   components: { GenreResultsLine, MovieItem },
-  data: function() {
-    return {
-      movies: [
-        {
-          id: "023456",
-          title: "Star Wars: Episode IX – The Rise of Skywalker",
-          releaseDate: 2019,
-          genre: ["Adventure", "Comedy", "Sci-fi"],
-          poster: "star_wars_5.jpg",
-        },
-        {
-          id: "1234560",
-          title: "Back to the Future",
-          releaseDate: 1985,
-          genre: ["Adventure", "Comedy", "Sci-fi"],
-          poster: "back_to_the_future.jpg",
-        }
-      ],
-      genres: [ "Adventure", "Drama" ]
-    };
+  props: {
+    movies: Array,
+    movie: Object,
   },
 };
 </script>
@@ -52,6 +35,7 @@ export default {
   display: flex;
   justify-content: space-evenly;
   flex-flow: row wrap;
+  padding: 30px 0;
 }
 
 .nx-movie-movies_empty {

@@ -6,13 +6,11 @@
 
 <script>
 export default {
-  name: "Footer"
+  name: "Footer",
 };
 </script>
 
 <style>
-
-
 .nx-footer {
   height: 60px;
   line-height: 60px;

@@ -17,18 +17,8 @@ export default {
     NavigationBar,
     MovieDetails,
   },
-  data: function() {
-    return {
-      movie: {
-        title: "Back to the Future",
-        releaseDate: 1985,
-        genre: ["Adventure", "Comedy", "Sci-fi"],
-        poster: "back_to_the_future.jpg",
-        rating: "8",
-        duration: "116",
-        description: `Marty McFly, a 17-year-old high school student, is accidentally sent thirty years into the past in a time-traveling DeLorean  invented by his close friend, the eccentric scientist Doc Brown.`,
-      },
-    };
+  props: {
+    movie: Object,
   },
 };
 </script>

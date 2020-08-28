@@ -1,8 +1,11 @@
 <template>
   <main class="nx-results-body">
-    <search-results-line :movies="movies" />
+    <search-results-line
+      :moviesLength="movies.length"
+      @sortingChanged="changeSorting"
+    />
     <div v-if="movies.length" class="nx-movies-list">
-      <movie-item v-for="movie in movies" :key="movie.title" :movie="movie" />
+      <movie-item v-for="movie in sortedList" :key="movie.id" :movie="movie" />
     </div>
     <div v-else class="nx-movies_empty">
       No films found
@@ -17,10 +20,24 @@ import MovieItem from "./MovieItem.vue";
 export default {
   name: "HomeResultsBody",
   components: { SearchResultsLine, MovieItem },
+  props: {
+    movies: Array,
+  },
+
   data: function() {
-    return {
-      movies: [],
-    };
+    return { sortingOption: "releaseDate" };
+  },
+
+  computed: {
+    sortedList() {
+      return this.$_.sortBy(this.movies, this.sortingOption).reverse();
+    },
+  },
+
+  methods: {
+    changeSorting(newSortingOption) {
+      this.sortingOption = newSortingOption;
+    },
   },
 };
 </script>
@@ -36,6 +53,7 @@ export default {
   display: flex;
   justify-content: space-evenly;
   flex-flow: row wrap;
+  padding: 30px 0;
 }
 
 .nx-movies_empty {

@@ -51,9 +51,8 @@ export default {
 }
 
 .nx-movie-item_img {
-  max-width: 100%;
-  height: auto;
-  margin: 10px;
+  width: 100%;
+  height: 450px;
 }
 
 .nx-movie-item_details {
@@ -61,13 +60,13 @@ export default {
   flex-flow: row wrap;
   align-items: center;
   justify-content: space-between;
-  margin: 10px;
+  margin-top: 10px;
   opacity: 0.8;
 }
 
 .nx-movie-item_title {
   font-size: 110%;
-  max-width: 80%;
+  width: 70%;
 }
 
 .nx-movie-item_year {
