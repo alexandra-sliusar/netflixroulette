@@ -21,12 +21,14 @@ export default {
     return {
       movies: [
         {
+          id: "023456",
           title: "Star Wars: Episode IX – The Rise of Skywalker",
           releaseDate: 2019,
           genre: ["Adventure", "Comedy", "Sci-fi"],
           poster: "star_wars_5.jpg",
         },
         {
+          id: "1234560",
           title: "Back to the Future",
           releaseDate: 1985,
           genre: ["Adventure", "Comedy", "Sci-fi"],

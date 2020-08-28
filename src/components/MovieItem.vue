@@ -1,6 +1,8 @@
 <template>
   <div class="nx-movie-item">
-    <img class="nx-movie-item_img" :src="getImgUrl(movie.poster)" />
+    <a class="nx-movie-item_img-link" :href="movieUrl">
+      <img class="nx-movie-item_img" :src="getImgUrl(movie.poster)" />
+    </a>
     <div class="nx-movie-item_details">
       <div class="nx-movie-item_title">
         {{ movie.title }}
@@ -19,13 +21,15 @@
 export default {
   name: "MovieItem",
   props: {
-    movie: Object,
+    movie: { type: Object, required: true },
   },
   computed: {
     genreList() {
-      if (!this.$props.movie) return "";
       var movie = this.$props.movie;
       return movie.genre.join(" & ");
+    },
+    movieUrl() {
+      return `/movies/${this.$props.movie.id}`;
     },
   },
   methods: {
