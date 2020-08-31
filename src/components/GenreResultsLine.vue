@@ -13,7 +13,7 @@ export default {
   computed: {
     genreList() {
       var genres = this.$props.genres;
-      var list = genres.join(' or ');
+      var list = genres.join(" or ");
       return `${list} genre${genres.length > 1 ? "s" : ""}`;
     },
   },
@@ -38,4 +38,5 @@ export default {
   color: #fff;
   font-family: "Montserrat", sans-serif;
   vertical-align: middle;
-}</style>
+}
+</style>

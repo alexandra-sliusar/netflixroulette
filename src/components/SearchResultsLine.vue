@@ -14,20 +14,34 @@ export default {
   name: "SearchResultsLine",
   components: { SwitchBar },
   props: {
-    movies: Array,
+    moviesLength: Number,
   },
 
   data: function() {
     return {
-      options: [{ text: "Release Date" }, { text: "Rating" }],
+      options: [
+        { id: "releaseDate", text: "Release Date", selected: true },
+        { id: "rating", text: "Rating", selected: false },
+      ],
     };
   },
 
   computed: {
     resultsString() {
-      var movies = this.$props.movies;
-      if (!movies || movies.length === 0) return "";
-      return `${movies.length} movie${movies.length > 1 ? "s" : ""} found`;
+      var length = this.moviesLength;
+      if (length === 0) return "";
+      return `${length} movie${length > 1 ? "s" : ""} found`;
+    },
+    sorting() {
+      var selected = this.options.filter((option) => option.selected);
+      if (selected.length > 0) return selected[0].id;
+      return "releaseDate";
+    },
+  },
+
+  watch: {
+    sorting: function(newSortingOption) {
+      this.$emit("sortingChanged", newSortingOption);
     },
   },
 };

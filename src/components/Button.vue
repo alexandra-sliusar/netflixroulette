@@ -1,5 +1,5 @@
 <template>
-  <button type="button" class="nx-btn nx-btn_search" @onClick="onClick">
+  <button type="button" class="nx-btn nx-btn_search" @click="onClick">
     {{ msg }}
   </button>
 </template>
@@ -33,6 +33,6 @@ export default {
 .nx-btn_search {
   border-radius: 5px;
   font-size: 130%;
-  width: 220px;
+  width: 20%;
 }
 </style>

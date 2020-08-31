@@ -5,8 +5,12 @@
       <button
         type="button"
         v-for="(option, index) in options"
-        :key="option.text"
-        :class="{ 'nx-btn nx-btn_switch': true, 'nx-btn_active': index === 0 }"
+        :key="option.id"
+        :class="{
+          'nx-btn nx-btn_switch': true,
+          'nx-btn_active': option.selected,
+        }"
+        @click="changeSelection(index)"
       >
         {{ option.text }}
       </button>
@@ -26,8 +30,9 @@ export default {
   },
 
   methods: {
-    onClick() {
-      this.$emit("onClick");
+    changeSelection(index) {
+      this.options.forEach((option) => (option.selected = false));
+      this.options[index].selected = true;
     },
   },
 };

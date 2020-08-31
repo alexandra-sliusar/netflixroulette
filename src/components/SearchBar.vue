@@ -4,8 +4,14 @@
       Find your movie
     </div>
     <div class="nx-search_actions">
-      <input type="text" class="nx-search_input" placeholder="Search" v-bind="query" />
-      <my-button msg="Search" />
+      <input
+        type="text"
+        class="nx-search_input"
+        placeholder="Search"
+        v-model="query"
+        @keyup.enter="searchMovies"
+      />
+      <my-button msg="Search" @onClick="searchMovies" />
     </div>
     <switch-bar switchName="Search by" :options="options" />
   </div>
@@ -22,8 +28,26 @@ export default {
   data: function() {
     return {
       query: "",
-      options: [{ text: "Title" }, { text: "Genre" }],
+      options: [
+        { id: "title", text: "Title", selected: true },
+        { id: "genre", text: "Genre", selected: false },
+      ],
     };
+  },
+
+  methods: {
+    searchMovies() {
+      var searchField;
+      var selectedOption = this.options.filter((option) => option.selected);
+      if (selectedOption.length > 0) searchField = selectedOption[0].id;
+      else {
+        searchField = "title";
+      }
+      this.$emit("searchMovies", {
+        query: this.query.toLowerCase().trim(),
+        searchField,
+      });
+    },
   },
 };
 </script>
