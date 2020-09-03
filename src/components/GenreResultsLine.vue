@@ -12,7 +12,7 @@ export default {
   },
   computed: {
     genreList() {
-      var genres = this.$props.genres;
+      var genres = this.genres;
       var list = genres.join(" or ");
       return `${list} genre${genres.length > 1 ? "s" : ""}`;
     },

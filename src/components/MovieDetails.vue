@@ -25,15 +25,18 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
   name: "MovieDetails",
-  props: {
-    movie: Object,
-  },
   computed: {
+    ...mapGetters({
+      movie: "getMovieById",
+    }),
+
     genreList() {
-      if (!this.$props.movie) return "";
-      var movie = this.$props.movie;
+      var movie = this.movie;
+      if (!movie) return "";
       return movie.genre.join(" & ");
     },
   },

@@ -17,9 +17,13 @@ import MovieItem from "./MovieItem.vue";
 export default {
   name: "MovieResultsBody",
   components: { GenreResultsLine, MovieItem },
-  props: {
-    movies: Array,
-    movie: Object,
+  computed: {
+    movie() {
+      return this.$store.getters.getMovieById;
+    },
+    movies() {
+      return this.$store.getters.getMoviesWithSameGenres(this.movie);
+    },
   },
 };
 </script>
