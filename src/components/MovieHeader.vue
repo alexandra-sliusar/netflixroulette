@@ -2,7 +2,7 @@
   <header class="nx-movie-header">
     <div class="nx-movie-header_blur">
       <navigation-bar :searchIconPresent="true" />
-      <movie-details :movie="movie" />
+      <movie-details />
     </div>
   </header>
 </template>
@@ -16,10 +16,7 @@ export default {
   components: {
     NavigationBar,
     MovieDetails,
-  },
-  props: {
-    movie: Object,
-  },
+  }
 };
 </script>
 

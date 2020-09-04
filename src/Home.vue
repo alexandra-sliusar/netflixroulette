@@ -7,10 +7,10 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import HomeHeader from "./components/HomeHeader.vue";
 import HomeResultsBody from "./components/HomeResultsBody.vue";
 import HomeFooter from "./components/Footer.vue";
-import moviesJson from "./assets/movies.json";
 
 export default {
   name: "Home",
@@ -21,8 +21,13 @@ export default {
   },
   data: function() {
     return {
-      movies: moviesJson,
+      movies: this.$store.getters.getMovies,
     };
+  },
+  computed: {
+    ...mapGetters({
+      defaultMovies: "getMovies",
+    }),
   },
   methods: {
     validateMovie(movieField, query) {
@@ -37,9 +42,9 @@ export default {
     searchMovies(searchRequest) {
       var self = this;
       if (searchRequest.query === "") {
-        self.movies = moviesJson;
+        self.movies = self.defaultMovies;
       } else {
-        self.movies = self.$_.filter(moviesJson, function(movie) {
+        self.movies = self.$_.filter(self.defaultMovies, function(movie) {
           return self.validateMovie(
             movie[searchRequest.searchField],
             searchRequest.query
