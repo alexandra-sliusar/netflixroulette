@@ -31,13 +31,6 @@ export default new Vuex.Store({
     },
   },
   mutations: {
-    RESET_STATE(state) {
-      state.movies = moviesJson;
-      state.searchFieldOption = "title";
-      state.searchQuery = "";
-      state.sortOption = "releaseDate";
-    },
-
     CHANGE_SORT_OPTION(state, sortOption) {
       state.sortOption = sortOption;
     },
