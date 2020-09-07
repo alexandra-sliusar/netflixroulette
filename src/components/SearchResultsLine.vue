@@ -3,7 +3,11 @@
     <span class="nx-results-title">
       {{ resultsString }}
     </span>
-    <switch-bar switchName="Sort by" :options="options" />
+    <switch-bar
+      switchName="Sort by"
+      :options="options"
+      @changeSelection="changeSorting"
+    />
   </div>
 </template>
 
@@ -32,16 +36,11 @@ export default {
       if (length === 0) return "";
       return `${length} movie${length > 1 ? "s" : ""} found`;
     },
-    sorting() {
-      var selected = this.options.filter((option) => option.selected);
-      if (selected.length > 0) return selected[0].id;
-      return "releaseDate";
-    },
   },
 
-  watch: {
-    sorting: function(newSortingOption) {
-      this.$emit("sortingChanged", newSortingOption);
+  methods: {
+    changeSorting(sortOption) {
+      this.$store.commit("CHANGE_SORT_OPTION", sortOption);
     },
   },
 };

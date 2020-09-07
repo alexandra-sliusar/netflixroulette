@@ -1,11 +1,8 @@
 <template>
   <main class="nx-results-body">
-    <search-results-line
-      :moviesLength="movies.length"
-      @sortingChanged="changeSorting"
-    />
+    <search-results-line :moviesLength="movies.length" />
     <div v-if="movies.length" class="nx-movies-list">
-      <movie-item v-for="movie in sortedList" :key="movie.id" :movie="movie" />
+      <movie-item v-for="movie in movies" :key="movie.id" :movie="movie" />
     </div>
     <div v-else class="nx-movies_empty">
       No films found
@@ -16,28 +13,15 @@
 <script>
 import SearchResultsLine from "./SearchResultsLine.vue";
 import MovieItem from "./MovieItem.vue";
+import { mapGetters } from "vuex";
 
 export default {
   name: "HomeResultsBody",
   components: { SearchResultsLine, MovieItem },
-  props: {
-    movies: Array,
-  },
-
-  data: function() {
-    return { sortingOption: "releaseDate" };
-  },
-
   computed: {
-    sortedList() {
-      return this.$_.sortBy(this.movies, this.sortingOption).reverse();
-    },
-  },
-
-  methods: {
-    changeSorting(newSortingOption) {
-      this.sortingOption = newSortingOption;
-    },
+    ...mapGetters({
+      movies: "getMovies",
+    }),
   },
 };
 </script>
