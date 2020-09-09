@@ -8,10 +8,13 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     movies: moviesJson,
+    searchFieldOption: "title",
+    searchQuery: "",
+    sortOption: "releaseDate",
   },
   getters: {
     getMovies: (state) => {
-      return state.movies;
+      return _.sortBy(state.movies, state.sortOption).reverse();
     },
 
     getMovieById: (state) => {
@@ -25,6 +28,35 @@ export default new Vuex.Store({
         if (targetMovie.id === movie.id) return false;
         return _.intersection(targetMovie.genre, movie.genre).length > 0;
       });
+    },
+  },
+  mutations: {
+    CHANGE_SORT_OPTION(state, sortOption) {
+      state.sortOption = sortOption;
+    },
+
+    CHANGE_SEARCH_FIELD_OPTION(state, searchFieldOption) {
+      state.searchFieldOption = searchFieldOption;
+    },
+
+    CHANGE_SEARCH_QUERY(state, searchQuery) {
+      state.searchQuery = searchQuery;
+    },
+
+    SEARCH_MOVIES(state) {
+      var searchQuery = state.searchQuery.toLowerCase().trim();
+      if (searchQuery) {
+        state.movies = _.filter(moviesJson, (movie) => {
+          var movieField = movie[state.searchFieldOption];
+          if (movieField.constructor === Array)
+            movieField = movieField.join(' ');
+          movieField = movieField.toLowerCase();
+
+          return movieField.includes(searchQuery);
+        });
+      } else {
+        state.movies = moviesJson;
+      }
     },
   },
 });

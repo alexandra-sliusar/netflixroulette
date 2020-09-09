@@ -33,6 +33,7 @@ export default {
     changeSelection(index) {
       this.options.forEach((option) => (option.selected = false));
       this.options[index].selected = true;
+      this.$emit('changeSelection', this.options[index].id);
     },
   },
 };

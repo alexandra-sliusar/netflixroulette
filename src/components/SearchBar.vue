@@ -13,7 +13,11 @@
       />
       <my-button msg="Search" @onClick="searchMovies" />
     </div>
-    <switch-bar switchName="Search by" :options="options" />
+    <switch-bar
+      switchName="Search by"
+      :options="options"
+      @changeSelection="changeSearchFieldOption"
+    />
   </div>
 </template>
 
@@ -27,26 +31,30 @@ export default {
 
   data: function() {
     return {
-      query: "",
       options: [
         { id: "title", text: "Title", selected: true },
         { id: "genre", text: "Genre", selected: false },
       ],
     };
   },
+  computed: {
+    query: {
+      set(query) {
+        this.$store.commit("CHANGE_SEARCH_QUERY", query);
+      },
+      get() {
+        return this.$store.state.searchQuery;
+      },
+    },
+  },
 
   methods: {
     searchMovies() {
-      var searchField;
-      var selectedOption = this.options.filter((option) => option.selected);
-      if (selectedOption.length > 0) searchField = selectedOption[0].id;
-      else {
-        searchField = "title";
-      }
-      this.$emit("searchMovies", {
-        query: this.query.toLowerCase().trim(),
-        searchField,
-      });
+      this.$store.commit("SEARCH_MOVIES");
+    },
+
+    changeSearchFieldOption(searchFieldOption) {
+      this.$store.commit("CHANGE_SEARCH_FIELD_OPTION", searchFieldOption);
     },
   },
 };
