@@ -1,6 +1,7 @@
 import Vue from "vue";
-import store from './store/store.js'
-import underscore from 'vue-underscore';
+import store from "./store/store.js";
+import underscore from "vue-underscore";
+import plugin from './plugins/plugin.js';
 import Home from "./Home.vue";
 import Movie from "./Movie.vue";
 import NotFound from "./NotFound.vue";
@@ -10,6 +11,7 @@ const movieRoutePattern = /^\/movies\/[0-9]+$/;
 
 Vue.config.productionTip = false;
 Vue.use(underscore);
+Vue.use(plugin);
 
 new Vue({
   el: "#app",

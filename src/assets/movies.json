@@ -6,7 +6,7 @@
     "genre": ["Drama"],
     "poster": "american_history_x.jpg",
     "rating": 8.5,
-    "duration": 119,
+    "duration": "1h 59min",
     "description": "A former neo-nazi skinhead tries to prevent his younger brother from going down the same wrong path that he did."
   },
   {
@@ -16,7 +16,7 @@
     "genre": ["Adventure", "Comedy", "Sci-fi"],
     "poster": "back_to_the_future.jpg",
     "rating": 8.5,
-    "duration": 116,
+    "duration": "1h 56min",
     "description": "Marty McFly, a 17-year-old high school student, is accidentally sent thirty years into the past in a time-traveling DeLorean invented by his close friend, the eccentric scientist Doc Brown."
   },
   {
@@ -26,7 +26,7 @@
     "genre": ["Drama", "Romance", "War"],
     "poster": "casablanca.jpg",
     "rating": 8.5,
-    "duration": 102,
+    "duration": "1h 42min",
     "description": "A cynical American expatriate struggles to decide whether or not he should help his former lover and her fugitive husband escape French Morocco."
   },
   {
@@ -36,7 +36,7 @@
     "genre": ["Biography", "Crime", "Drama"],
     "poster": "catch_me_if_you_can.jpg",
     "rating": 8.1,
-    "duration": 141,
+    "duration": "2h 21min",
     "description": "A seasoned FBI agent pursues Frank Abagnale Jr. who, before his 19th birthday, successfully forged millions of dollars' worth of checks while posing as a Pan Am pilot, a doctor, and a legal prosecutor."
   },
   {
@@ -46,7 +46,7 @@
     "genre": ["Action", "Crime", "Drama"],
     "poster": "dark_knight.jpg",
     "rating": 9.0,
-    "duration": 152,
+    "duration": "2h 32min",
     "description": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice."
   },
   {
@@ -56,7 +56,7 @@
     "genre": ["Drama"],
     "poster": "fight_club.jpg",
     "rating": 8.8,
-    "duration": 139,
+    "duration": "2h 19min",
     "description": "An insomniac office worker and a devil-may-care soapmaker form an underground fight club that evolves into something much, much more."
   },
   {
@@ -66,7 +66,7 @@
     "genre": ["Drama", "Romance"],
     "poster": "forrest_gump.jpg",
     "rating": 8.8,
-    "duration": 142,
+    "duration": "2h 22min",
     "description": "The presidencies of Kennedy and Johnson, the events of Vietnam, Watergate and other historical events unfold through the perspective of an Alabama man with an IQ of 75, whose only desire is to be reunited with his childhood sweetheart."
   },
   {
@@ -76,7 +76,7 @@
     "genre": ["Crime", "Drama"],
     "poster": "godfather.jpg",
     "rating": 9.2,
-    "duration": 175,
+    "duration": "2h 55min",
     "description": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son."
   },
   {
@@ -86,7 +86,7 @@
     "genre": ["Drama", "Mystery", "Thriller"],
     "poster": "gone_girl.jpg",
     "rating": 8.1,
-    "duration": 149,
+    "duration": "2h 29min",
     "description": "With his wife's disappearance having become the focus of an intense media circus, a man sees the spotlight turned on him when it's suspected that he may not be innocent."
   },
   {
@@ -96,7 +96,7 @@
     "genre": ["Drama", "History", "Romance"],
     "poster": "gone_with_the_wind.jpg",
     "rating": 8.1,
-    "duration": 238,
+    "duration": "3h 58min",
     "description": "A manipulative woman and a roguish man conduct a turbulent romance during the American Civil War and Reconstruction periods."
   },
   {
@@ -106,7 +106,7 @@
     "genre": ["Adventure", "Comedy", "Crime"],
     "poster": "grand_budapest_hotel.jpg",
     "rating": 8.1,
-    "duration": 99,
+    "duration": "1h 39min",
     "description": "A writer encounters the owner of an aging high-class hotel, who tells him of his early years serving as a lobby boy in the hotel's glorious years under an exceptional concierge."
   },
   {
@@ -116,7 +116,7 @@
     "genre": ["Biography", "Comedy", "Drama"],
     "poster": "green_book.jpg",
     "rating": 8.2,
-    "duration": 130,
+    "duration": "2h 10min",
     "description": "A working-class Italian-American bouncer becomes the driver of an African-American classical pianist on a tour of venues through the 1960s American South."
   },
   {
@@ -126,7 +126,7 @@
     "genre": ["Crime", "Drama", "Fantasy"],
     "poster": "green_mile.jpg",
     "rating": 8.6,
-    "duration": 189,
+    "duration": "3h 9min",
     "description": "The lives of guards on Death Row are affected by one of their charges: a black man accused of child murder and rape, yet who has a mysterious gift."
   },
   {
@@ -136,7 +136,7 @@
     "genre": ["Biography", "Drama", "History"],
     "poster": "hamilton.jpg",
     "rating": 8.7,
-    "duration": 160,
+    "duration": "2h 40min",
     "description": "The real life of one of America's foremost founding fathers and first Secretary of the Treasury, Alexander Hamilton. Captured live on Broadway from the Richard Rodgers Theater with the original Broadway cast."
   },
   {
@@ -146,7 +146,7 @@
     "genre": ["Animation", "Adventure", "Family"],
     "poster": "howls_moving_castle.jpg",
     "rating": 8.2,
-    "duration": 119,
+    "duration": "1h 59min",
     "description": "When an unconfident young woman is cursed with an old body by a spiteful witch, her only chance of breaking the spell lies with a self-indulgent yet insecure young wizard and his companions in his legged, walking castle."
   },
   {
@@ -156,7 +156,7 @@
     "genre": ["Action", "Adventure", "Sci-fi"],
     "poster": "inception.jpg",
     "rating": 8.8,
-    "duration": 148,
+    "duration": "2h 28min",
     "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O."
   },
   {
@@ -166,7 +166,7 @@
     "genre": ["Animation", "Adventure", "Comedy"],
     "poster": "inside_out.jpg",
     "rating": 8.1,
-    "duration": 95,
+    "duration": "1h 35min",
     "description": "After young Riley is uprooted from her Midwest life and moved to San Francisco, her emotions - Joy, Fear, Anger, Disgust and Sadness - conflict on how best to navigate a new city, house, and school."
   },
   {
@@ -176,7 +176,7 @@
     "genre": ["Adventure", "Drama", "Sci-fi"],
     "poster": "interstellar.jpg",
     "rating": 8.6,
-    "duration": 169,
+    "duration": "2h 49min",
     "description": "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival."
   },
   {
@@ -186,7 +186,7 @@
     "genre": ["Biography", "Comedy", "Drama"],
     "poster": "intouchables.jpg",
     "rating": 8.5,
-    "duration": 112,
+    "duration": "1h 52min",
     "description": "After he becomes a quadriplegic from a paragliding accident, an aristocrat hires a young man from the projects to be his caregiver."
   },
   {
@@ -196,7 +196,7 @@
     "genre": ["Crime", "Drama", "Thriller"],
     "poster": "joker.jpg",
     "rating": 8.5,
-    "duration": 122,
+    "duration": "2h 2min",
     "description": "In Gotham City, mentally troubled comedian Arthur Fleck is disregarded and mistreated by society. He then embarks on a downward spiral of revolution and bloody crime. This path brings him face-to-face with his alter-ego: the Joker."
   },
   {
@@ -206,7 +206,7 @@
     "genre": ["Animation", "Adventure", "Drama"],
     "poster": "lion_king.jpg",
     "rating": 8.5,
-    "duration": 88,
+    "duration": "1h 28min",
     "description": "Lion prince Simba and his father are targeted by his bitter uncle, who wants to ascend the throne himself."
   },
   {
@@ -216,7 +216,7 @@
     "genre": ["Action", "Adventure", "Drama"],
     "poster": "lord_of_the_rings.jpg",
     "rating": 8.9,
-    "duration": 201,
+    "duration": "3h 21min",
     "description": "Gandalf and Aragorn lead the World of Men against Sauron's army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring."
   },
   {
@@ -226,7 +226,7 @@
     "genre": ["Action", "Adventure", "Sci-fi"],
     "poster": "mad_max.jpg",
     "rating": 8.1,
-    "duration": 120,
+    "duration": "2h",
     "description": "In a post-apocalyptic wasteland, a woman rebels against a tyrannical ruler in search for her homeland with the aid of a group of female prisoners, a psychotic worshiper, and a drifter named Max."
   },
   {
@@ -236,7 +236,7 @@
     "genre": ["Action", "Sci-fi"],
     "poster": "matrix.jpg",
     "rating": 8.7,
-    "duration": 136,
+    "duration": "2h 16min",
     "description": "A computer hacker learns from mysterious rebels about the true nature of his reality and his role in the war against its controllers."
   },
   {
@@ -246,7 +246,7 @@
     "genre": ["Mystery", "Thriller"],
     "poster": "memento.jpg",
     "rating": 8.4,
-    "duration": 113,
+    "duration": "1h 53min",
     "description": "A man with short-term memory loss attempts to track down his wife's murderer."
   },
   {
@@ -256,7 +256,7 @@
     "genre": ["Drama", "Mystery", "Sci-fi"],
     "poster": "prestige.jpg",
     "rating": 8.5,
-    "duration": 130,
+    "duration": "2h 10min",
     "description": "After a tragic accident, two stage magicians engage in a battle to create the ultimate illusion while sacrificing everything they have to outwit each other."
   },
   {
@@ -266,7 +266,7 @@
     "genre": ["Crime", "Drama"],
     "poster": "pulp_fiction.jpg",
     "rating": 8.9,
-    "duration": 154,
+    "duration": "2h 34min",
     "description": "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption."
   },
   {
@@ -276,7 +276,7 @@
     "genre": ["Drama"],
     "poster": "requiem_for_a_dream.jpg",
     "rating": 8.3,
-    "duration": 102,
+    "duration": "1h 42min",
     "description": "The drug-induced utopias of four Coney Island people are shattered when their addictions run deep."
   },
   {
@@ -286,7 +286,7 @@
     "genre": ["Crime", "Drama"],
     "poster": "scarface.jpg",
     "rating": 8.3,
-    "duration": 170,
+    "duration": "2h 50min",
     "description": "In 1980 Miami, a determined Cuban immigrant takes over a drug cartel and succumbs to greed."
   },
   {
@@ -296,7 +296,7 @@
     "genre": ["Biography", "Drama", "History"],
     "poster": "schindlers_list.jpg",
     "rating": 8.9,
-    "duration": 195,
+    "duration": "3h 15min",
     "description": "In German-occupied Poland during World War II, industrialist Oskar Schindler gradually becomes concerned for his Jewish workforce after witnessing their persecution by the Nazis."
   },
   {
@@ -306,7 +306,7 @@
     "genre": ["Drama"],
     "poster": "shawshank_redemption.jpg",
     "rating": 9.3,
-    "duration": 142,
+    "duration": "2h 22min",
     "description": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency."
   },
   {
@@ -316,7 +316,7 @@
     "genre": ["Drama", "Horror"],
     "poster": "shining.jpg",
     "rating": 8.4,
-    "duration": 146,
+    "duration": "2h 26min",
     "description": "A family heads to an isolated hotel for the winter where a sinister presence influences the father into violence, while his psychic son sees horrific forebodings from both past and future."
   },
   {
@@ -326,7 +326,7 @@
     "genre": ["Crime", "Drama", "Thriller"],
     "poster": "silence_of_the_lambs.jpg",
     "rating": 8.6,
-    "duration": 118,
+    "duration": "1h 58min",
     "description": "A young F.B.I. cadet must receive the help of an incarcerated and manipulative cannibal killer to help catch another serial killer, a madman who skins his victims."
   },
   {
@@ -336,7 +336,7 @@
     "genre": ["Animation", "Adventure", "Family"],
     "poster": "spirited_away.jpg",
     "rating": 8.6,
-    "duration": 125,
+    "duration": "2h 5min",
     "description": "During her family's move to the suburbs, a sullen 10-year-old girl wanders into a world ruled by gods, witches, and spirits, and where humans are changed into beasts."
   },
   {
@@ -346,7 +346,7 @@
     "genre": ["Action", "Adventure", "Fantasy"],
     "poster": "star_wars_5.jpg",
     "rating": 8.7,
-    "duration": 124,
+    "duration": "2h 4min",
     "description": "After the Rebels are brutally overpowered by the Empire on the ice planet Hoth, Luke Skywalker begins Jedi training with Yoda, while his friends are pursued by Darth Vader and a bounty hunter named Boba Fett all over the galaxy."
   },
   {
@@ -356,7 +356,7 @@
     "genre": ["Action", "Sci-fi"],
     "poster": "terminator_2.jpg",
     "rating": 8.5,
-    "duration": 137,
+    "duration": "2h 17min",
     "description": "A cyborg, identical to the one who failed to kill Sarah Connor, must now protect her teenage son, John Connor, from a more advanced and powerful cyborg."
   },
   {
@@ -366,7 +366,7 @@
     "genre": ["Crime", "Mystery", "Thriller"],
     "poster": "usual_suspects.jpg",
     "rating": 8.5,
-    "duration": 106,
+    "duration": "1h 46min",
     "description": "A sole survivor tells of the twisty events leading up to a horrific gun battle on a boat, which began when five criminals met at a seemingly random police lineup."
   },
   {
@@ -376,7 +376,7 @@
     "genre": ["Action", "Drama", "Sci-fi"],
     "poster": "v_for_vendetta.jpg",
     "rating": 8.2,
-    "duration": 132,
+    "duration": "2h 12min",
     "description": "In a future British tyranny, a shadowy freedom fighter, known only by the alias of 'V', plots to overthrow it with the help of a young woman."
   },
   {
@@ -386,7 +386,7 @@
     "genre": ["Animation", "Adventure", "Family"],
     "poster": "wall-e.jpg",
     "rating": 8.4,
-    "duration": 98,
+    "duration": "1h 38min",
     "description": "In the distant future, a small waste-collecting robot inadvertently embarks on a space journey that will ultimately decide the fate of mankind."
   },
   {
@@ -396,7 +396,7 @@
     "genre": ["Biography", "Crime", "Drama"],
     "poster": "wolf_of_wall_street.jpg",
     "rating": 8.2,
-    "duration": 180,
+    "duration": "3h",
     "description": "Based on the true story of Jordan Belfort, from his rise to a wealthy stock-broker living the high life to his fall involving crime, corruption and the federal government."
   }
 ]

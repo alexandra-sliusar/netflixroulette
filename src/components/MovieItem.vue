@@ -1,7 +1,11 @@
 <template>
   <div class="nx-movie-item">
-    <a class="nx-movie-item_img-link" :href="movieUrl">
-      <img class="nx-movie-item_img" :src="getImgUrl(movie.poster)" />
+    <a v-lazyload class="nx-movie-item_img-link" :href="movieUrl">
+      <img
+        class="nx-movie-item_img nx_animation-faded"
+        :data-url="getImgUrl(movie.poster)"
+        :alt="movie.title"
+      />
     </a>
     <div class="nx-movie-item_details">
       <div class="nx-movie-item_title">
@@ -80,5 +84,62 @@ export default {
   margin: 8px 0;
   font-size: 90%;
   opacity: 0.7;
+}
+
+.nx_animation-faded {
+  opacity: 0;
+}
+
+.nx_animation-fade_in {
+  animation: fadeIn ease 3s;
+  -webkit-animation: fadeIn ease 3s;
+  -moz-animation: fadeIn ease 3s;
+  -o-animation: fadeIn ease 3s;
+  -ms-animation: fadeIn ease 3s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 </style>

@@ -5,7 +5,7 @@
       <div class="nx-movie-details_title">
         {{ movie.title }}
         <div class="nx-movie-details_rating">
-          <span>{{ getRating(movie.rating) }}</span>
+          <span>{{ movie.rating | parseRating }}</span>
         </div>
       </div>
       <div class="nx-movie-details_genre">
@@ -15,7 +15,9 @@
         <span class="nx-movie-details_release">
           {{ movie.releaseDate }}
         </span>
-        <span class="nx-movie-details_duration"> {{ movie.duration }} min</span>
+        <span class="nx-movie-details_duration">
+          {{ movie.duration | parseDuration }} min</span
+        >
       </div>
       <div class="nx-movie-details_desc">
         {{ movie.description }}
@@ -43,10 +45,6 @@ export default {
   methods: {
     getImgUrl(pic) {
       return require("../assets/posters/" + pic);
-    },
-
-    getRating(val) {
-      return parseFloat(val).toFixed(1);
     },
   },
 };
