@@ -1,6 +1,6 @@
 <template>
   <main class="nx-movie-results-body">
-    <genre-results-line :genres="movie.genre" />
+    <genre-results-line v-if="movie" :genres="movie.genres" />
     <div v-if="movies.length" class="nx-movie-movies-list">
       <movie-item v-for="movie in movies" :key="movie.title" :movie="movie" />
     </div>
@@ -22,7 +22,7 @@ export default {
       return this.$store.getters.getMovieById;
     },
     movies() {
-      return this.$store.getters.getMoviesWithSameGenres(this.movie);
+      return this.$store.getters.getMovies;
     },
   },
 };

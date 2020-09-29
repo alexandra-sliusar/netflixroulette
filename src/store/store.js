@@ -1,33 +1,25 @@
 import Vuex from "vuex";
 import Vue from "vue";
 import { _ } from "vue-underscore";
-import moviesJson from "./../assets/movies.json";
+import ApiService from "./../api";
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    movies: moviesJson,
+    movies: [],
+    movieById: null,
     searchFieldOption: "title",
     searchQuery: "",
-    sortOption: "releaseDate",
+    sortOption: "release_date",
   },
   getters: {
     getMovies: (state) => {
-      return _.sortBy(state.movies, state.sortOption).reverse();
+      return _.first(_.sortBy(state.movies, state.sortOption).reverse(), 18);
     },
 
     getMovieById: (state) => {
-      var path = window.location.pathname;
-      var movieId = path.split("/")[2];
-      return _.find(state.movies, (movie) => movie.id === movieId);
-    },
-
-    getMoviesWithSameGenres: (state) => (targetMovie) => {
-      return _.filter(state.movies, (movie) => {
-        if (targetMovie.id === movie.id) return false;
-        return _.intersection(targetMovie.genre, movie.genre).length > 0;
-      });
+      return state.movieById;
     },
   },
   mutations: {
@@ -42,21 +34,41 @@ export default new Vuex.Store({
     CHANGE_SEARCH_QUERY(state, searchQuery) {
       state.searchQuery = searchQuery;
     },
+  },
 
-    SEARCH_MOVIES(state) {
+  actions: {
+    LOAD_MOVIES({ state }) {
+      var sortBy = state.sortOption;
+      var searchBy = state.searchFieldOption;
       var searchQuery = state.searchQuery.toLowerCase().trim();
-      if (searchQuery) {
-        state.movies = _.filter(moviesJson, (movie) => {
-          var movieField = movie[state.searchFieldOption];
-          if (movieField.constructor === Array)
-            movieField = movieField.join(' ');
-          movieField = movieField.toLowerCase();
+      return ApiService.getMovies(sortBy, searchBy, searchQuery).then(
+        (data) => {
+          state.movies = data;
+        }
+      );
+    },
 
-          return movieField.includes(searchQuery);
-        });
-      } else {
-        state.movies = moviesJson;
-      }
+    GET_MOVIE_BY_ID({ state }) {
+      var path = window.location.pathname;
+      var movieId = path.split("/")[2];
+      return ApiService.getMovieById(movieId).then((data) => {
+        state.movieById = data;
+      });
+    },
+
+    GET_MOVIES_BY_GENRES({ state }) {
+      return ApiService.getMoviesByGenres(
+        state.sortOption,
+        state.movieById.genres
+      ).then((data) => {
+        state.movies = data;
+      });
+    },
+
+    GET_MOVIE_DETAILS({ dispatch }) {
+      return dispatch("GET_MOVIE_BY_ID").then(() => {
+        dispatch("GET_MOVIES_BY_GENRES");
+      });
     },
   },
 });
