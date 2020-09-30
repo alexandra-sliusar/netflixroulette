@@ -33,12 +33,6 @@ export default {
   props: {
     searchIconPresent: Boolean,
   },
-
-  methods: {
-    onClick() {
-      this.$emit("onClick");
-    },
-  },
 };
 </script>
 

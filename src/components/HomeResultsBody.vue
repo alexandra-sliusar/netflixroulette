@@ -23,9 +23,6 @@ export default {
       movies: "getMovies",
     }),
   },
-  created() {
-    this.$store.dispatch("LOAD_MOVIES");
-  },
 };
 </script>
 
