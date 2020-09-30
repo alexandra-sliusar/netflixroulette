@@ -1,11 +1,11 @@
 <template>
-  <div class="nx-movie-details">
-    <img class="nx-movie-details_img" :src="getImgUrl(movie.poster)" />
+  <div class="nx-movie-details" v-if="movie">
+    <img class="nx-movie-details_img" :src="movie.poster_path" />
     <div class="nx-movie-details_details">
       <div class="nx-movie-details_title">
         {{ movie.title }}
-        <div class="nx-movie-details_rating">
-          <span>{{ movie.rating | parseRating }}</span>
+        <div v-if="movie.vote_average > 0" class="nx-movie-details_rating">
+          <span>{{ movie.vote_average | parseRating }}</span>
         </div>
       </div>
       <div class="nx-movie-details_genre">
@@ -13,14 +13,14 @@
       </div>
       <div class="nx-movie-details_release-duration">
         <span class="nx-movie-details_release">
-          {{ movie.releaseDate }}
+          {{ movie.release_date | retrieveYear }}
         </span>
-        <span class="nx-movie-details_duration">
-          {{ movie.duration | parseDuration }} min</span
+        <span v-if="movie.runtime" class="nx-movie-details_duration">
+          {{ movie.runtime }} min</span
         >
       </div>
       <div class="nx-movie-details_desc">
-        {{ movie.description }}
+        {{ movie.overview }}
       </div>
     </div>
   </div>
@@ -28,7 +28,6 @@
 
 <script>
 import { mapGetters } from "vuex";
-
 export default {
   name: "MovieDetails",
   computed: {
@@ -39,13 +38,11 @@ export default {
     genreList() {
       var movie = this.movie;
       if (!movie) return "";
-      return movie.genre.join(" & ");
+      return movie.genres.join(" & ");
     },
   },
-  methods: {
-    getImgUrl(pic) {
-      return require("../assets/posters/" + pic);
-    },
+  created() {
+    this.$store.dispatch("GET_MOVIE_DETAILS");
   },
 };
 </script>

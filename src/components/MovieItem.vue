@@ -1,9 +1,9 @@
 <template>
   <div class="nx-movie-item">
-    <a v-lazyload class="nx-movie-item_img-link" :href="movieUrl">
+    <a class="nx-movie-item_img-link" :href="movieUrl">
       <img
-        class="nx-movie-item_img nx_animation-faded"
-        :data-url="getImgUrl(movie.poster)"
+        class="nx-movie-item_img"
+        :src="movie.poster_path"
         :alt="movie.title"
       />
     </a>
@@ -12,7 +12,7 @@
         {{ movie.title }}
       </div>
       <div class="nx-movie-item_year">
-        {{ movie.releaseDate }}
+        {{ movie.release_date | retrieveYear }}
       </div>
       <div class="nx_movie-item_genre">
         {{ genreList }}
@@ -30,15 +30,10 @@ export default {
   computed: {
     genreList() {
       var movie = this.$props.movie;
-      return movie.genre.join(" & ");
+      return movie.genres.join(" & ");
     },
     movieUrl() {
-      return `/movies/${this.$props.movie.id}`;
-    },
-  },
-  methods: {
-    getImgUrl(pic) {
-      return require("../assets/posters/" + pic);
+      return `/movies/${this.movie.id}`;
     },
   },
 };

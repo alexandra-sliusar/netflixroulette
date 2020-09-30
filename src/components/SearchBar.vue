@@ -33,7 +33,7 @@ export default {
     return {
       options: [
         { id: "title", text: "Title", selected: true },
-        { id: "genre", text: "Genre", selected: false },
+        { id: "genres", text: "Genre", selected: false },
       ],
     };
   },
@@ -50,7 +50,7 @@ export default {
 
   methods: {
     searchMovies() {
-      this.$store.commit("SEARCH_MOVIES");
+      this.$store.dispatch("LOAD_MOVIES");
     },
 
     changeSearchFieldOption(searchFieldOption) {
