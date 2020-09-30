@@ -1,39 +1,25 @@
 import Vue from "vue";
-import store from "./store/store.js";
-import underscore from "vue-underscore";
-import plugin from "./plugins/plugin.js";
-import Home from "./Home.vue";
-import Movie from "./Movie.vue";
-import NotFound from "./NotFound.vue";
-import ApiService from "./api";
+import VueRouter from 'vue-router'
+import App from './pages/App.vue'
 
-const homeRoute = "/";
-const movieRoutePattern = /^\/movies\/[0-9]+$/;
+import store from "./store/store";
+import underscore from "vue-underscore";
+import plugin from "./plugins/plugin";
+import ApiService from "./api";
+import router from "./router";
 
 Vue.config.productionTip = false;
 Vue.use(underscore);
 Vue.use(plugin);
+Vue.use(VueRouter);
 
 ApiService.init();
 
 new Vue({
   el: "#app",
+  router,
   store,
-  data: {
-    currentRoute: window.location.pathname,
-  },
-  computed: {
-    ViewComponent() {
-      if (this.currentRoute === homeRoute) {
-        return Home;
-      } else if (movieRoutePattern.test(this.currentRoute)) {
-        return Movie;
-      } else {
-        return NotFound;
-      }
-    },
-  },
   render(h) {
-    return h(this.ViewComponent);
+    return h(App);
   },
 });

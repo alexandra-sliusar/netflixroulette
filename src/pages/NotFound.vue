@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="not-found">
     <navigation-bar :searchIconPresent="false" />
     <p class="nx-error-404">We're sorry but this page is not available.</p>
     <error-footer />
@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import ErrorFooter from "./components/Footer.vue";
-import NavigationBar from "./components/NavigationBar.vue";
+import ErrorFooter from "./../components/Footer.vue";
+import NavigationBar from "./../components/NavigationBar.vue";
 export default {
   name: "NotFound",
   components: { ErrorFooter, NavigationBar },

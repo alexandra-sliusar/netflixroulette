@@ -48,9 +48,7 @@ export default new Vuex.Store({
       );
     },
 
-    GET_MOVIE_BY_ID({ state }) {
-      var path = window.location.pathname;
-      var movieId = path.split("/")[2];
+    GET_MOVIE_BY_ID({ state }, movieId) {
       return ApiService.getMovieById(movieId).then((data) => {
         state.movieById = data;
       });
@@ -62,12 +60,6 @@ export default new Vuex.Store({
         state.movieById.genres
       ).then((data) => {
         state.movies = data;
-      });
-    },
-
-    GET_MOVIE_DETAILS({ dispatch }) {
-      return dispatch("GET_MOVIE_BY_ID").then(() => {
-        dispatch("GET_MOVIES_BY_GENRES");
       });
     },
   },
